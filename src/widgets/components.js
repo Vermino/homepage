@@ -117,6 +117,7 @@ const components = {
   readarr: dynamic(() => import("./readarr/component")),
   romm: dynamic(() => import("./romm/component")),
   rutorrent: dynamic(() => import("./rutorrent/component")),
+  rybbit: dynamic(() => import("./rybbit/component")),
   sabnzbd: dynamic(() => import("./sabnzbd/component")),
   scrutiny: dynamic(() => import("./scrutiny/component")),
   slskd: dynamic(() => import("./slskd/component")),

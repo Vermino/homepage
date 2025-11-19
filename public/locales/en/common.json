@@ -202,6 +202,12 @@
         "upload": "Upload",
         "download": "Download"
     },
+    "rybbit": {
+        "visitors": "Visitors",
+        "pageviews": "Pageviews",
+        "bounce_rate": "Bounce Rate",
+        "avg_duration": "Avg. Duration (s)"
+    },
     "transmission": {
         "download": "Download",
         "upload": "Upload",

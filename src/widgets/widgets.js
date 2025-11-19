@@ -108,6 +108,7 @@ import radarr from "./radarr/widget";
 import readarr from "./readarr/widget";
 import romm from "./romm/widget";
 import rutorrent from "./rutorrent/widget";
+import rybbit from "./rybbit/widget";
 import sabnzbd from "./sabnzbd/widget";
 import scrutiny from "./scrutiny/widget";
 import slskd from "./slskd/widget";
@@ -258,6 +259,7 @@ const widgets = {
   readarr,
   romm,
   rutorrent,
+  rybbit,
   sabnzbd,
   scrutiny,
   slskd,
