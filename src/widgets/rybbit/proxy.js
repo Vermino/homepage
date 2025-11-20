@@ -33,6 +33,8 @@ export default async function rybbitProxyHandler(req, res) {
     return res.status(400).json({ error: "Missing required rybbit configuration" });
   }
 
+  logger.debug(`Rybbit configuration - URL: ${url}, siteId: ${siteId}`);
+
   // Build API URL using formatApiCall
   const apiUrl = formatApiCall(widgets[widget.type].api, { endpoint, ...widget });
 
@@ -46,6 +48,8 @@ export default async function rybbitProxyHandler(req, res) {
   }
 
   const apiEndpoint = params.toString() ? `${apiUrl}?${params.toString()}` : apiUrl;
+
+  logger.debug(`Rybbit API endpoint: ${apiEndpoint}`);
 
   // Set authorization header if API key provided
   const headers = {
@@ -63,7 +67,7 @@ export default async function rybbitProxyHandler(req, res) {
     });
 
     if (status !== 200) {
-      logger.error(`Rybbit API error: ${status}`);
+      logger.error(`Rybbit API error: ${status} - ${data}`);
       return res.status(status).json({ error: data });
     }
 
@@ -71,6 +75,7 @@ export default async function rybbitProxyHandler(req, res) {
     try {
       parsedData = JSON.parse(data.toString());
     } catch (e) {
+      logger.debug(`Failed to parse response as JSON: ${e.message}`);
       parsedData = data;
     }
 
